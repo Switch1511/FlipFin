@@ -1,0 +1,12 @@
+@import '../../assets/css/variables.scss';
+
+header {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  background-color: $primary-color;
+  padding-left: .5rem;
+  padding-right: 1rem;
+}
