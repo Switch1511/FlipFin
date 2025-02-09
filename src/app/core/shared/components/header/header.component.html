@@ -1,7 +1,7 @@
 <header class="py-3 px-5 flex align-items-center justify-content-between relative lg:static">
-  <img src="assets/img/logo-hype.png" alt="image" height="40" class="px-3">
+  <img src="assets/img/logo.png" alt="image" height="35" class="px-3">
 
-  <div class="align-items-center flex-grow-1 justify-content-end hidden lg:flex absolute lg:static w-full bg-indigo-500 left-0 top-100 z-1 shadow-2 lg:shadow-none">
+  <div class="align-items-center flex-grow-1 justify-content-end hidden lg:flex absolute lg:static w-full left-0 top-100 z-1 shadow-2 lg:shadow-none" style="background-color: #050521;">
     <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row">
 
       <li *ngFor="let item of menuItems">
@@ -17,7 +17,7 @@
       <p-menu #menu [model]="items" [popup]="true" />
       <li>
         <a (click)="menu.toggle($event)" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-          <img src="assets/img/profile-icon.png" alt="image" height="25">
+          <img src="assets/img/profile-icon.png" alt="image" height="30">
         </a>
       </li>
     </ul>
