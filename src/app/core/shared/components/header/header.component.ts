@@ -27,6 +27,9 @@ interface MenuItem {
 export class HeaderComponent {
   menuItems: MenuItem[] = [
     { label: 'Home', icon: 'pi-home', link: '/' },
+    { label: 'Lista de Tarefas', icon: 'pi-list', link: '/to-do-list' },
+    { label: 'Flashcards', icon: 'pi-copy', link: '/flashcards' },
+    { label: 'Anotações', icon: 'pi-pen-to-square', link: '/anotations' },
   ];
 
   items = [
