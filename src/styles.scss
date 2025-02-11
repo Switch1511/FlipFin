@@ -4,12 +4,14 @@
 body{
   background-color: #eff3f8;
 }
+
 body,
 body .p-component
 {
   margin: 0;
   font-family: "Open Sans", sans-serif;
 }
+
 a{
   text-decoration: none;
 }
@@ -26,6 +28,9 @@ a{
   border: 1px solid #94a3b8;
 }
 
+.p-textarea{
+  width: 100%;
+}
 
 :root {
   --p-menu-item-color: #0f172a !important;
