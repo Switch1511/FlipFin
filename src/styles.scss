@@ -32,23 +32,25 @@ a{
   width: 100%;
 }
 
+.p-drawer {
+  background: #050521 !important;
+  border: 1px solid #050521 !important;
+  
+}
+
+#header {
+  .p-drawer-header .p-ripple, .p-button{
+    color: white !important;
+    background: #050521 !important;
+    border: #050521 !important;
+  }
+} 
+
+.p-drawer-header {
+  justify-content: end !important;
+}
+
 :root {
-  --p-menu-item-color: #0f172a !important;
-  --p-menu-item-focus-color: #0f172a !important;
-  --p-inputtext-background: #ffffff !important;
-  --p-inputtext-disabled-background: #cbd5e1 !important;
-  --p-inputtext-filled-background: #f1f5f9 !important;
-  --p-inputtext-filled-hover-background: #e2e8f0 !important;
-  --p-inputtext-filled-focus-background: #f1f5f9 !important;
-  --p-inputtext-border-color: #94a3b8 !important;
-  --p-inputtext-hover-border-color: #0f172a !important;
-  --p-inputtext-focus-border-color: #3bbfa1 !important;
-  --p-inputtext-invalid-border-color: #c62828 !important;
-  --p-inputtext-color: #0f172a !important;
-  --p-inputtext-disabled-color: #475569 !important;
-  --p-inputtext-placeholder-color: #475569 !important;
-  --p-inputtext-invalid-placeholder-color: #c62828 !important;
-  --p-menu-item-content: #495057 !important;
   --p-primary-color: #0ea5e9 !important;
   --p-checkbox-checked-border-color: #0ea5e9 !important;
   --p-checkbox-checked-background: #0ea5e9 !important;
