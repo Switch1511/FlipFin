@@ -7,3 +7,20 @@
 - 🎴 **Flashcards** – Crie seus próprios baralhos e estude de forma interativa e eficiente.  
 
 O projeto está atualmente em desenvolvimento e busca fornecer uma experiência simples e eficaz para quem deseja estudar e se organizar melhor. 🚀  
+
+## Tecnologias Utilizadas 🚀
+
+### Front-end:
+- 🅰️ **Angular v19**  
+- 🎨 **PrimeNG**  
+- 🖌️ **SCSS**  
+
+### Back-end:
+- ☕ **Java 21** 
+- 🔥 **Spring Boot v3.4.2** 
+- 🐘 **PostgreSQL**
+- 🛠️ **Spring Security + JWT**  
+
+### Outros:
+- 🐳 **Docker**  
+- 📡 **REST API**  
