@@ -5,6 +5,7 @@ import { HomeComponent } from './core/features/home/home.component';
 import { AnotationsComponent } from './core/features/anotations/anotations.component';
 import { FlashcardsComponent } from './core/features/flashcards/flashcards.component';
 import { ToDoListComponent } from './core/features/to-do-list/to-do-list.component';
+import { CoreComponent } from './core/core.component';
 
 export const routes: Routes = [
   {
@@ -13,12 +14,16 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: HomeComponent,
-    data: {
-      breadcrumb: 'Home'
-    },
+    component: CoreComponent,
     canActivate: [AuthGuard],
     children: [
+      {
+        path: '',
+        component: HomeComponent,
+        data: {
+          breadcrumb: 'Home'
+        },
+      },
       {
         path: 'to-do-list',
         component: ToDoListComponent,
