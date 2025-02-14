@@ -1,5 +1,5 @@
 <div class="p-3">
-    <div class="surface-card p-4 flex justify-content-between">
+    <div class="surface-card p-4 flex justify-content-between border-round-xl">
         <div class="text-3xl font-medium text-900 borde">Anotações</div>
         <div>
             <button pButton pRipple label="Criar anotação" class="w-full" (click)="showDialog()"></button>
@@ -8,7 +8,7 @@
 </div>
 
 <div class="p-3 pt-0">
-    <div class="surface-card p-4">
+    <div class="surface-card p-4 border-round-xl">
         <p-table [columns]="cols" [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
             <ng-template #header let-columns>
                 <tr>
