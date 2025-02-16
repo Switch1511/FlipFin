@@ -2,7 +2,7 @@
     <div class="surface-card p-4 flex justify-content-between border-round-xl">
         <div class="text-3xl font-medium text-900 borde">Flashcards</div>
         <div>
-            <button pButton pRipple label="Criar baralho" class="w-full"></button>
+            <button pButton pRipple label="Criar baralho" class="w-full" (click)="showDialog()"></button>
         </div>
     </div>
 </div>
@@ -64,3 +64,10 @@
         </p-table>
     </div>
 </div>
+
+<p-dialog header="Nome do novo baralho" [(visible)]="visible" [modal]="true"  [style]="{ width: '20vw' }" [draggable]="false" [resizable]="false">
+    <div class="flex justify-content-end gap-2 mt-3">
+        <button pButton pRipple label="Salvar"></button>
+        <button pButton pRipple label="Cancelar"></button>
+    </div>
+</p-dialog>

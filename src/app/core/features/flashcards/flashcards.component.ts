@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { Ripple } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
+import { Dialog } from 'primeng/dialog';
 
 @Component({
   selector: 'app-flashcards',
   imports: [
     TableModule, 
     ButtonModule, 
-    Ripple
+    Ripple,
+    Dialog
   ],
   templateUrl: './flashcards.component.html',
   styleUrl: './flashcards.component.scss'
@@ -34,4 +36,10 @@ export class FlashcardsComponent {
       balance: 70663
     }
   ];
+
+  visible: boolean = false;
+  
+  showDialog() {
+    this.visible = true;
+  }
 }
