@@ -3,13 +3,17 @@
 
   <div class="align-items-center flex-grow-1 justify-content-end hidden lg:flex absolute lg:static w-full left-0 top-100 z-1 shadow-2 lg:shadow-none" style="background-color: #050521;">
     <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row">
-      <li *ngFor="let item of menuItems">
-        <a [routerLink]="item.link" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-          <i *ngIf="item?.icon" class="pi" [ngClass]="item.icon + ' mr-2'"></i>
-          <span>{{ item.label }}</span>
-          <span class="p-ink"></span>
-        </a>
-      </li>
+
+      @for (item of menuItems; track item.label) {
+        <li>
+          <a [routerLink]="item.link" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+            <i *ngIf="item?.icon" class="pi" [ngClass]="item.icon + ' mr-2'"></i>
+            <span>{{ item.label }}</span>
+            <span class="p-ink"></span>
+          </a>
+        </li>
+      }
+
     </ul>
 
     <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row">
@@ -24,13 +28,21 @@
 
   <p-drawer [(visible)]="visible" styleClass="w-20rem">
     <ul class="list-none p-0 m-0 flex flex-column">
-      <li *ngFor="let item of menuItems">
-        <a [routerLink]="item.link" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-          <i *ngIf="item?.icon" class="pi" [ngClass]="item.icon + ' mr-2'"></i>
-          <span>{{ item.label }}</span>
-          <span class="p-ink"></span>
-        </a>
-      </li>
+
+      @for (item of menuItems; track item.label) {
+        <li>
+          <a [routerLink]="item.link" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+            
+            @if(item?.icon) { 
+              <i class="pi" [ngClass]="item.icon + ' mr-2'"></i> 
+            }
+            
+            <span>{{ item.label }}</span>
+            <span class="p-ink"></span>
+          </a>
+        </li>
+      }
+
       <li>
         <a routerLink="/login" (click)="logout()" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
           <i class="pi pi-sign-out mr-2"></i>

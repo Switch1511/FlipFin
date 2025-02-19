@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { Router, RouterLink } from '@angular/router';
@@ -18,8 +18,6 @@ interface MenuItem {
   imports: [
     MenubarModule,
     NgClass,
-    NgFor,
-    NgIf,
     RouterLink,
     Menu,
     DrawerModule,

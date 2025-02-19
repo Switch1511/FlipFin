@@ -12,25 +12,31 @@
         <p-table [columns]="cols" [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
             <ng-template #header let-columns>
                 <tr>
-                    <th *ngFor="let col of columns" [ngStyle]="col.header === '' ? {'width': '120px'} : {}">
-                        {{ col.header }}
-                    </th>
+                    @for (col of columns; track col.field) {
+                        <th [ngStyle]="col.header === '' ? {'width': '120px'} : {}">
+                            {{ col.header }}
+                        </th>
+                    }
+                    
                 </tr>
             </ng-template>
             <ng-template #body let-rowData let-columns="columns">
                 <tr>
-                    <td *ngFor="let col of columns">
-                        <ng-container *ngIf="col.field !== 'options'">
-                            {{ rowData[col.field] }}
-                        </ng-container>
+                    @for (col of columns; track col.field) {
+                        <td>
+                            @if(col.field !== 'options') {
 
-                        <div class="flex gap-2 justify-content-between" *ngIf="col.field === 'options'">
-                            <p-button icon="pi pi-pencil" [rounded]="true" severity="success" (click)="showDialog()"/>
-                            <p-button icon="pi pi-trash" [rounded]="true" severity="danger"/>
-                        </div>
-                    </td>
+                                {{ rowData[col.field] }}
 
-                    
+                            } @else if(col.field === 'options') {
+                                <div class="flex gap-2 justify-content-between">
+                                    <p-button icon="pi pi-pencil" [rounded]="true" severity="success" (click)="showDialog()"/>
+                                    <p-button icon="pi pi-trash" [rounded]="true" severity="danger"/>
+                                </div>
+                            }
+                            
+                        </td>
+                    }
                 </tr>
             </ng-template>
         </p-table>

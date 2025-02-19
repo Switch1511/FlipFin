@@ -1,4 +1,4 @@
-import { NgFor, NgIf, NgStyle } from '@angular/common';
+import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
@@ -18,8 +18,6 @@ interface PageEvent {
   imports: [
     ButtonModule,
     TableModule,
-    NgFor,
-    NgIf,
     NgStyle,
     Dialog,
     ReactiveFormsModule,
