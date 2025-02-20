@@ -1,14 +1,18 @@
-:host ::ng-deep .p-rowgroup-footer td {
-    font-weight: 700;
-}
-
-:host ::ng-deep .p-rowgroup-header {
-    span {
-        font-weight: 700;
+table {
+    width: 100%;
+    tr {
+        border-radius: 12px;
+        cursor: pointer;
+        &:hover{
+            background-color: #eaeaea;
+        }
+        td {
+            font-size: 22px;
+            padding: 12px;
+        
+            
     }
-
-    .p-row-toggler {
-        vertical-align: middle;
-        margin-right: .25rem;
     }
+        
+   
 }

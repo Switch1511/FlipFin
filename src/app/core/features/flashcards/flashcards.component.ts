@@ -20,6 +20,9 @@ export class FlashcardsComponent {
     {
       id: 1,
       name: 'James Butt',
+      new: 5,
+      learn: 3,
+      review: 32,
       children: [
         {
           name: 'teste',

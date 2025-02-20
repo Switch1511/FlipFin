@@ -12,41 +12,55 @@
 <section class="p-3 pt-0 flex justify-content-center">
     <div class="container">
         <div class="surface-card p-4 border-round-xl">
-            <p-table [value]="customers" sortField="name" sortMode="single" dataKey="name" rowGroupMode="subheader" groupRowsBy="name" [tableStyle]="{'min-width': '70rem'}">
-                <ng-template #groupheader let-customer let-rowIndex="rowIndex" let-expanded="expanded">
+            <table>
+                <tr>
+                    <th>Baralho</th>
+                    <th>Novos</th>
+                    <th>Aprender</th>
+                    <th>A Revisar</th>
+                </tr>
+                @for (customer of customers; track customer.name) {
                     <tr>
-                        <td colspan="5" class="td-hover">
-                            <button
-                                type="button"
-                                pButton
-                                pRipple
-                                [pRowToggler]="customer"
-                                text
-                                rounded
-                                plain
-                                class="mr-2"
-                                [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'">
-                            </button>
-                            <span class="font-bold ml-2">{{customer.name}}</span>
-                        </td>
+                        <td class="font-medium text-900 ">
+                            {{customer.name}}
+                        </td> 
+                        <td class="font-medium text-900 text-center text-blue-400">
+                            {{customer.new || 0}}
+                        </td> 
+                        <td class="font-medium text-900 text-center text-red-400">
+                            {{customer.learn || 0}}
+                        </td> 
+                        <td class="font-medium text-900 text-center text-green-400">
+                            {{customer.review || 0}}
+                        </td> 
+                        <td class="text-center">
+                            <i class="pi pi-cog" style="color: #575757; font-size: 18px;"></i>
+                        </td> 
+                        
                     </tr>
-                </ng-template>
-                <ng-template #expandedrow let-customer>
-                    <tr>
-                        <td colspan="5">
-                            <p-table [value]="customer.children" dataKey="name" groupRowsBy="name" [tableStyle]="{'margin-left': '2rem', 'width': '90%'}">
-                                <ng-template pTemplate="body" let-child>
-                                    <tr>
-                                        <td  class="td-hover">{{child.name}}</td>
-                                    </tr>
-                                </ng-template>
-                            </p-table>
-                        </td>
-                    </tr>
-                </ng-template>
-
-                
-            </p-table>
+                 
+                            @for (teste of customer.children; track teste.name) {
+                                <tr>
+                                    <td class="font-medium text-900">
+                                        {{teste.name}}
+                                    </td> 
+                                    <td class="font-medium text-900 text-center">
+                                        {{teste.new || 0}}
+                                    </td> 
+                                    <td class="font-medium text-900 text-center">
+                                        {{teste.learn || 0}}
+                                    </td> 
+                                    <td class="font-medium text-900 text-center">
+                                        {{teste.review || 0}}
+                                    </td> 
+                                    <td class="text-center">
+                                        <i class="pi pi-cog" style="color: #575757; font-size: 18px;"></i>
+                                    </td> 
+                                </tr>
+                            }
+                       
+                }
+            </table>
         </div>
     </div>
 </section>
