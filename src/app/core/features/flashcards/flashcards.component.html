@@ -1,69 +1,55 @@
-<div class="p-3">
-    <div class="surface-card p-4 flex justify-content-between border-round-xl">
-        <div class="text-3xl font-medium text-900 borde">Flashcards</div>
-        <div>
-            <button pButton pRipple label="Criar baralho" class="w-full" (click)="showDialog()"></button>
+<section class="p-3 flex justify-content-center">
+    <div class="container">
+        <div class="surface-card p-4 flex justify-content-between border-round-xl">
+            <div class="text-3xl font-medium text-900 borde">Flashcards</div>
+            <div>
+                <button pButton pRipple label="Criar baralho" class="w-full" (click)="showDialog()"></button>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="p-3 pt-0">
-    <div class="surface-card p-4 border-round-xl">
-        <p-table [value]="customers" sortField="representative.name" sortMode="single" dataKey="representative.name" rowGroupMode="subheader" groupRowsBy="representative.name" [tableStyle]="{'min-width': '70rem'}">
-            <ng-template #header>
-                <tr>
-                    <th style="width:20%">Name</th>
-                    <th style="width:20%">Country</th>
-                    <th style="width:20%">Company</th>
-                    <th style="width:20%">Status</th>
-                    <th style="width:20%">Date</th>
-                </tr>
-            </ng-template>
-            <ng-template #groupheader let-customer let-rowIndex="rowIndex" let-expanded="expanded">
-                <tr>
-                    <td colspan="5">
-                        <button
-                            type="button"
-                            pButton
-                            pRipple
-                            [pRowToggler]="customer"
-                            text
-                            rounded
-                            plain
-                            class="mr-2"
-                            [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'">
-                        </button>
-                        <img
-                            [alt]="customer.representative.name"
-                            src="https://primefaces.org/cdn/primeng/images/demo/avatar/{{customer.representative.image}}"
-                            width="32"
-                            style="vertical-align: middle; display: inline-block" />
-                        <span class="font-bold ml-2">{{customer.representative.name}}</span>
-                    </td>
-                </tr>
-            </ng-template>
-            <ng-template #expandedrow let-customer>
-                <tr>
-                    <td>
-                        {{customer.name}}
-                    </td>
-                    <td>
-                        <div class="flex items-center gap-2">
-                            <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + customer.country.code" style="width: 20px" />
-                            <span>{{ customer.country.name }}</span>
-                        </div>
-                    </td>
-                    <td>
-                        {{customer.company}}
-                    </td>
-                    <td>
-                        {{customer.date}}
-                    </td>
-                </tr>
-            </ng-template>
-        </p-table>
+<section class="p-3 pt-0 flex justify-content-center">
+    <div class="container">
+        <div class="surface-card p-4 border-round-xl">
+            <p-table [value]="customers" sortField="name" sortMode="single" dataKey="name" rowGroupMode="subheader" groupRowsBy="name" [tableStyle]="{'min-width': '70rem'}">
+                <ng-template #groupheader let-customer let-rowIndex="rowIndex" let-expanded="expanded">
+                    <tr>
+                        <td colspan="5" class="td-hover">
+                            <button
+                                type="button"
+                                pButton
+                                pRipple
+                                [pRowToggler]="customer"
+                                text
+                                rounded
+                                plain
+                                class="mr-2"
+                                [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'">
+                            </button>
+                            <span class="font-bold ml-2">{{customer.name}}</span>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template #expandedrow let-customer>
+                    <tr>
+                        <td colspan="5">
+                            <p-table [value]="customer.children" dataKey="name" groupRowsBy="name" [tableStyle]="{'margin-left': '2rem', 'width': '90%'}">
+                                <ng-template pTemplate="body" let-child>
+                                    <tr>
+                                        <td  class="td-hover">{{child.name}}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </td>
+                    </tr>
+                </ng-template>
+
+                
+            </p-table>
+        </div>
     </div>
-</div>
+</section>
 
 <p-dialog header="Nome do novo baralho" [(visible)]="visible" [modal]="true"  [style]="{ width: '20vw' }" [draggable]="false" [resizable]="false">
     <div class="flex justify-content-end gap-2 mt-3">

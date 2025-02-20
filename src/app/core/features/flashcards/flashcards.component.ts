@@ -18,22 +18,28 @@ import { Dialog } from 'primeng/dialog';
 export class FlashcardsComponent {
   customers: any[] = [
     {
-      id: 1000,
+      id: 1,
       name: 'James Butt',
-      country: {
-          name: 'Algeria',
-          code: 'dz'
-      },
-      company: 'Benton, John B Jr',
-      date: '2015-09-13',
-      status: 'unqualified',
-      verified: true,
-      activity: 17,
-      representative: {
-          name: 'Ioni Bowcher',
-          image: 'ionibowcher.png'
-      },
-      balance: 70663
+      children: [
+        {
+          name: 'teste',
+        },
+        {
+          name: 'teste1',
+        },
+        {
+          name: 'teste4',
+        }
+      ]
+    },
+    {
+      id: 2,
+      name: 'teste',
+      children: [
+        {
+          name: 'teste',
+        }
+      ]
     }
   ];
 

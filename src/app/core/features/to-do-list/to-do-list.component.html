@@ -1,43 +1,46 @@
-<div class="p-3">
-    <div class="surface-card p-4 flex justify-content-between border-round-xl">
-        <div class="text-3xl font-medium text-900 borde">Tarefas</div>
-        <div>
-            <button pButton pRipple label="Criar tarefa" class="w-full" (click)="showDialog()"></button>
-        </div>
-    </div>
-</div>
-
-<div class="p-3 pt-0 flex gap-4">
-    <div class="w-full">
-        <div class="text-3xl font-medium text-900 mb-2">Diárias</div>
-
-        <div class="surface-card border-round-xl" style="min-height: 500px;">
-            <div class="p-3">
-                <textarea rows="1" variant="filled" placeholder="Adicionar Diária" pTextarea [autoResize]="true"></textarea>
+<section class="p-3 flex justify-content-center">
+    <div class="container">
+        <div class="surface-card p-4 flex justify-content-between border-round-xl">
+            <div class="text-3xl font-medium text-900 borde">Tarefas</div>
+            <div>
+                <button pButton pRipple label="Criar tarefa" class="w-full" (click)="showDialog()"></button>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="w-full">
-        <div class="text-3xl font-medium text-900 mb-2">Afazeres</div>
+<section class="p-3 pt-0 flex justify-content-center">
+    <div class="container flex gap-4">
+        <div class="w-full">
+            <div class="text-3xl font-medium text-900 mb-2">Diárias</div>
 
-        <div class="surface-card border-round-xl" style="min-height: 500px;">
-            <div class="p-3">
-                <textarea rows="1" variant="filled" placeholder="Adicionar Afazer" pTextarea [autoResize]="true"></textarea>
+            <div class="surface-card border-round-xl" style="min-height: 500px;">
+                <div class="p-3">
+                    <textarea rows="1" variant="filled" placeholder="Adicionar Diária" pTextarea [autoResize]="true"></textarea>
+                </div>
             </div>
-            
+        </div>
+
+        <div class="w-full">
+            <div class="text-3xl font-medium text-900 mb-2">Afazeres</div>
+
+            <div class="surface-card border-round-xl" style="min-height: 500px;">
+                <div class="p-3">
+                    <textarea rows="1" variant="filled" placeholder="Adicionar Afazer" pTextarea [autoResize]="true"></textarea>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="w-full">
+            <div class="text-3xl font-medium text-900 mb-2">Histórico</div>
+
+            <div class="surface-card border-round-xl" style="min-height: 500px;">
+
+            </div>
         </div>
     </div>
-
-    <div class="w-full">
-        <div class="text-3xl font-medium text-900 mb-2">Histórico</div>
-
-        <div class="surface-card border-round-xl" style="min-height: 500px;">
-
-        </div>
-    </div>
-
-</div>
+</section>
 
 <p-dialog header="Tarefas" [(visible)]="visible" [modal]="true"  [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
     <div class="flex justify-content-end gap-2 mt-3">
