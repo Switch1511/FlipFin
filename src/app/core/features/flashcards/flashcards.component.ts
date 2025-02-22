@@ -3,6 +3,7 @@ import { ButtonModule } from 'primeng/button';
 import { Ripple } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
 import { Dialog } from 'primeng/dialog';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-flashcards',
@@ -10,7 +11,8 @@ import { Dialog } from 'primeng/dialog';
     TableModule, 
     ButtonModule, 
     Ripple,
-    Dialog
+    Dialog,
+    CommonModule
   ],
   templateUrl: './flashcards.component.html',
   styleUrl: './flashcards.component.scss'

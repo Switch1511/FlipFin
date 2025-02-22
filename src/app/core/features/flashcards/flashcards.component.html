@@ -21,12 +21,13 @@
                 </tr>
                 @for (customer of customers; track customer.name) {
                     <tr>
-                        <td class="font-medium text-900 ">
+                        <td class="font-medium text-900 " >
                             {{customer.name}}
                         </td> 
-                        <td class="font-medium text-900 text-center text-blue-400">
-                            {{customer.new || 0}}
-                        </td> 
+                        <td class="font-medium text-900 text-center" 
+                            [ngStyle]="{'color': (customer.new > 0) ? '#006aff' : 'black'}">
+                            {{ customer.new || 0 }}
+                        </td>
                         <td class="font-medium text-900 text-center text-red-400">
                             {{customer.learn || 0}}
                         </td> 
