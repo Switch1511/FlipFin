@@ -28,6 +28,9 @@ export class FlashcardsComponent {
       children: [
         {
           name: 'teste',
+          new: 6,
+          learn: 3,
+          review: 0,
         },
         {
           name: 'teste1',
@@ -40,9 +43,15 @@ export class FlashcardsComponent {
     {
       id: 2,
       name: 'teste',
+      new: 6,
+      learn: 3,
+      review: 0,
       children: [
         {
           name: 'teste',
+          new: 6,
+          learn: 3,
+          review: 0,
         }
       ]
     }

@@ -21,17 +21,19 @@
                 </tr>
                 @for (customer of customers; track customer.name) {
                     <tr>
-                        <td class="font-medium text-900 " >
+                        <td class="font-medium" >
                             {{customer.name}}
                         </td> 
-                        <td class="font-medium text-900 text-center" 
-                            [ngStyle]="{'color': (customer.new > 0) ? '#006aff' : 'black'}">
+                        <td class="font-medium  text-center" 
+                            [ngStyle]="{'color': (customer.new > 0) ? 'blue' : 'black'}">
                             {{ customer.new || 0 }}
                         </td>
-                        <td class="font-medium text-900 text-center text-red-400">
+                        <td class="font-medium text-center"
+                            [ngStyle]="{'color': (customer.learn > 0) ? 'red' : 'black'}">
                             {{customer.learn || 0}}
                         </td> 
-                        <td class="font-medium text-900 text-center text-green-400">
+                        <td class="font-medium text-center"
+                            [ngStyle]="{'color': (customer.review > 0) ? 'green' : 'black'}">
                             {{customer.review || 0}}
                         </td> 
                         <td class="text-center">
@@ -42,16 +44,19 @@
                  
                             @for (teste of customer.children; track teste.name) {
                                 <tr>
-                                    <td class="font-medium text-900">
+                                    <td class="font-medium">
                                         {{teste.name}}
                                     </td> 
-                                    <td class="font-medium text-900 text-center">
+                                    <td class="font-medium text-center"
+                                    [ngStyle]="{'color': (teste.new > 0) ? 'blue' : 'black'}">
                                         {{teste.new || 0}}
                                     </td> 
-                                    <td class="font-medium text-900 text-center">
+                                    <td class="font-medium text-center"
+                                        [ngStyle]="{'color': (teste.learn > 0) ? 'red' : 'black'}">
                                         {{teste.learn || 0}}
                                     </td> 
-                                    <td class="font-medium text-900 text-center">
+                                    <td class="font-medium text-center"
+                                        [ngStyle]="{'color': (teste.review > 0) ? 'green' : 'black'}">
                                         {{teste.review || 0}}
                                     </td> 
                                     <td class="text-center">
