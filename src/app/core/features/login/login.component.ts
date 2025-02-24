@@ -1,5 +1,5 @@
 import { AuthService } from './../../auth/auth.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
@@ -33,13 +33,24 @@ export class LoginComponent {
     });
   }
 
-  onSubmit() {
-    if (this.loginForm.disabled) return;
-    this.loginForm.disable();
-
-    this.authService.login();
-    this.router.navigate(['/']);
-
+  ngOnInit(): void {
+    this.loginForm.enable;
   }
 
+  onSubmit() {
+    if (this.loginForm.disabled) return;
+
+    this.loginForm.disable();
+
+    this.authService.login().subscribe({
+      next: (res) => {
+        console.log('Login bem-sucedido:', res);
+        this.router.navigate(['/']);
+      },
+      error: (err) => {
+        console.error('Erro ao fazer login:', err);
+        this.loginForm.enable();
+      }
+    });
+  }
 }
