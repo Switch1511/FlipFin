@@ -1,5 +1,5 @@
 import { AuthService } from './../../auth/auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
@@ -19,28 +19,26 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
+  protected formBuilderService = inject(FormBuilder);
+
+  form = this.formBuilderService.group({
+    email: [''],
+    password: ['']
+  });
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private fb: FormBuilder
-  ) {
-    this.loginForm = this.fb.group({
-      email: [''],
-      password: [''],
-      rememberMe: [false]
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.loginForm.enable;
+    this.form.enable;
   }
 
   onSubmit() {
-    if (this.loginForm.disabled) return;
+    if (this.form.disabled) return;
 
-    this.loginForm.disable();
+    this.form.disable();
 
     this.authService.login().subscribe({
       next: (res) => {
@@ -49,7 +47,7 @@ export class LoginComponent implements OnInit {
       },
       error: (err) => {
         console.error('Erro ao fazer login:', err);
-        this.loginForm.enable();
+        this.form.enable();
       }
     });
   }
