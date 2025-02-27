@@ -1,0 +1,35 @@
+:host {
+    section {
+        position: fixed;
+        width: 260px;
+        height: 100vh;
+        z-index: 1;
+        background-color: #fff;
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 27px 0 23px;
+            margin: 20px 0;
+
+            img {
+                cursor: pointer;
+            }
+        }
+
+        .sidebar-body{
+            ul{
+                li{
+                    padding: 5px 10px;
+                    background-color: #dadada;
+                    
+                    a{
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+}
