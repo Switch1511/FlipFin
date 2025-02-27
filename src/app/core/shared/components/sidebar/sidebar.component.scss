@@ -20,12 +20,19 @@
 
         .sidebar-body{
             ul{
+                padding: 0 23px 0 17px;
+                row-gap: 12px;
+
                 li{
                     padding: 5px 10px;
-                    background-color: #dadada;
-                    
+                    border-radius: 16px;
+
+                    &:hover {
+                        background-color: #EBF9FF;
+                    }
+
                     a{
-                        
+                        color: #000;
                     }
                 }
             }

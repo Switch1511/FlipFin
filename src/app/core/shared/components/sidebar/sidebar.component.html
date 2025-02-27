@@ -6,11 +6,11 @@
     </div>
 
     <div class="sidebar-body">
-        <ul class="list-none p-0 m-0 flex select-none flex-column">
+        <ul class="list-none m-0 flex select-none flex-column">
 
             @for (item of menuItems; track item.label) {
               <li>
-                <a [routerLink]="item.link" class="">
+                <a [routerLink]="item.link" class="no-underline">
     
                   @if(item?.icon) { 
                     <i class="pi" [ngClass]="item.icon + ' mr-2'"></i> 
