@@ -20,20 +20,31 @@
 
         .sidebar-body{
             ul{
-                padding: 0 23px 0 17px;
-                row-gap: 12px;
+                padding: 50px 23px 0 17px;
+                row-gap: 16px;
 
                 li{
-                    padding: 5px 10px;
+                    font-family: "Kodchasan", sans-serif;
+                    font-weight: 500;
+                    display: flex;
+                    padding: 8px 12px;
                     border-radius: 16px;
+                    color: #000;
+                    cursor: pointer;
 
                     &:hover {
                         background-color: #EBF9FF;
                     }
 
-                    a{
-                        color: #000;
+                    i {
+                        font-size: 24px;
                     }
+
+                    span {
+                        align-content: center;
+                        font-size: 18px;
+                    }
+                    
                 }
             }
         }

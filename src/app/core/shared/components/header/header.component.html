@@ -1,65 +1,16 @@
-<header id="header" class="py-3 px-5 flex justify-content-center">
-  <section class="container flex align-items-center justify-content-between relative lg:static">
-    <img src="assets/img/logo.png" alt="image" height="35" class="px-3">
+<header class="py-3 px-5">
+  <section class="container flex align-items-center justify-content-end">
+  
 
-    <div class="align-items-center flex-grow-1 justify-content-end hidden lg:flex absolute lg:static w-full left-0 top-100 z-1 shadow-2 lg:shadow-none" style="background-color: #050521;">
-      <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row">
-
-        @for (item of menuItems; track item.label) {
-          <li>
-            <a [routerLink]="item.link" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-
-              @if(item?.icon) { 
-                <i class="pi" [ngClass]="item.icon + ' mr-2'"></i> 
-              }
-
-              <span>{{ item.label }}</span>
-              <span class="p-ink"></span>
-            </a>
-          </li>
-        }
-
-      </ul>
-
+    <div class="align-items-center">
       <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row">
         <p-menu #menu [model]="items" [popup]="true" />
         <li>
-          <a (click)="menu.toggle($event)" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-            <img src="assets/img/profile-icon.png" alt="image" height="30">
+          <a (click)="menu.toggle($event)" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center font-medium border-round cursor-pointer transition-colors transition-duration-150">
+            <img src="assets/img/profile-icon.png" alt="image" height="57">
           </a>
         </li>
       </ul>
-    </div>
-
-    <p-drawer [(visible)]="visible" styleClass="w-20rem">
-      <ul class="list-none p-0 m-0 flex flex-column">
-
-        @for (item of menuItems; track item.label) {
-          <li>
-            <a [routerLink]="item.link" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-              
-              @if(item?.icon) { 
-                <i class="pi" [ngClass]="item.icon + ' mr-2'"></i> 
-              }
-              
-              <span>{{ item.label }}</span>
-              <span class="p-ink"></span>
-            </a>
-          </li>
-        }
-
-        <li>
-          <a routerLink="/login" (click)="logout()" class="p-ripple p-element flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-indigo-100 hover:text-indigo-50 hover:bg-indigo-600 font-medium border-round cursor-pointer transition-colors transition-duration-150">
-            <i class="pi pi-sign-out mr-2"></i>
-            <span>Sair</span>
-            <span class="p-ink"></span>
-          </a>
-        </li>
-      </ul>
-    </p-drawer>
-
-    <div>
-      <p-button (click)="visible = true" icon="pi pi-bars text-3xl" class="lg:hidden"></p-button>
     </div>
     
   </section>
