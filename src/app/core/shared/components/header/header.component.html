@@ -1,12 +1,17 @@
-<header class="py-3 px-5">
+<header>
   <section class="container flex align-items-center justify-content-end">
   
 
     <div class="align-items-center">
       <ul class="list-none p-0 m-0 flex align-items-center select-none flex-row">
+        <li>
+          <i class="pi pi-bell"></i>
+          <i class="pi pi-moon"></i>
+        </li>
+        
         <p-menu #menu [model]="items" [popup]="true" />
         <li>
-          <a (click)="menu.toggle($event)" class="p-ripple p-element flex px-3 py-2 align-items-center font-medium border-round cursor-pointer transition-colors transition-duration-150">
+          <a (click)="menu.toggle($event)" class="p-ripple p-element flex align-items-center font-medium border-round cursor-pointer transition-colors transition-duration-150">
             <img src="assets/img/profile-icon.png" alt="image" height="57">
           </a>
         </li>

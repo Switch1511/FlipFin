@@ -1,7 +1,6 @@
-import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { Menu } from 'primeng/menu';
 import { AuthService } from '../../../auth/auth.service';
 import { DrawerModule } from 'primeng/drawer';
@@ -17,8 +16,6 @@ interface MenuItem {
   selector: 'app-header',
   imports: [
     MenubarModule,
-    NgClass,
-    RouterLink,
     Menu,
     DrawerModule,
     ButtonModule

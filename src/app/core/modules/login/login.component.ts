@@ -1,4 +1,4 @@
-import { AuthService } from './../../auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 import { Component, inject, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';

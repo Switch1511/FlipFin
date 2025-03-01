@@ -1,0 +1,27 @@
+button {
+    font-family: "Kodchasan", serif;
+    font-weight: 600;
+    font-size: 20px;
+
+    color: #fff;
+    background-color: #1DB4F9;
+    border: none;
+    border-radius: 16px;
+    padding: 12px 42px;
+    min-width: 200px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #07a1e8;
+    }
+
+    &.reverse {
+        color: #1DB4F9;
+        background-color: #fff;
+        border: 1px solid #07a1e8;
+
+        &:hover {
+            background-color: #f4f4f4;
+        }
+    }
+}

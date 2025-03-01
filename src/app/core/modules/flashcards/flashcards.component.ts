@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
-import { Ripple } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
-import { Dialog } from 'primeng/dialog';
 import { CommonModule } from '@angular/common';
+import { ButtonComponent } from '../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-flashcards',
   imports: [
     TableModule, 
     ButtonModule, 
-    Ripple,
-    Dialog,
-    CommonModule
+    CommonModule,
+    ButtonComponent
   ],
   templateUrl: './flashcards.component.html',
   styleUrl: './flashcards.component.scss'

@@ -6,11 +6,12 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
+  
   constructor(private http: HttpClient) {}
 
   login(): Observable<boolean> {
     sessionStorage.setItem('access_token', '123');
-    return of(true); // Retorna um Observable que emite "true" indicando sucesso
+    return of(true);
   }
 
   logout() {

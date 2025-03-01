@@ -1,28 +1,20 @@
-import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
-import { Dialog } from 'primeng/dialog';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TextareaModule } from 'primeng/textarea';
 import { PaginatorModule } from 'primeng/paginator';
+import { ButtonComponent } from '../../shared/components/button/button.component';
 
-interface PageEvent {
-  first: number;
-  rows: number;
-  page: number;
-  pageCount: number;
-}
 @Component({
   selector: 'app-anotations',
   imports: [
     ButtonModule,
     TableModule,
-    NgStyle,
-    Dialog,
     ReactiveFormsModule,
     TextareaModule,
-    PaginatorModule
+    PaginatorModule,
+    ButtonComponent
   ],
   templateUrl: './anotations.component.html',
   styleUrl: './anotations.component.scss'
