@@ -1,18 +1,25 @@
-table {
-    width: 100%;
-    tr {
-        border-radius: 12px;
-        cursor: pointer;
-        &:hover{
-            background-color: #eaeaea;
-        }
-        td {
-            font-size: 22px;
-            padding: 12px;
-        
-            
-        }
+header {
+    font-size: 48px;
+    margin: 20px 0;
+    padding: 0 62px;
+
+    h3 {
+        margin: 0;
+        font-family: "Kodchasan", serif;
+        font-weight: 500;
+        font-style: normal;
     }
-        
-   
+}
+
+section {
+    padding: 0 62px;
+    gap: 41px;
+
+    .card {
+        background-color: #FFFFFF;
+        border-radius: 16px;
+        width: 100%;
+        height: 500px;
+
+    }
 }

@@ -1,79 +1,27 @@
-<section class="p-3 flex justify-content-center">
-    <div class="container">
-        <div class="surface-card p-4 flex justify-content-between border-round-xl">
-            <div class="text-3xl font-medium text-900 borde">Flashcards</div>
-            <div>
-                <button pButton pRipple label="Criar baralho" class="w-full" (click)="showDialog()"></button>
-            </div>
-        </div>
+<header>
+    <h3>Flashcards</h3>
+
+    <div>
+
+    </div>
+</header>
+
+<section class="flex">
+    <div class="card" style="width: 65%;">
+
+    </div>
+
+    <div class="card" style="width: 35%;">
+        
     </div>
 </section>
 
-<section class="p-3 pt-0 flex justify-content-center">
-    <div class="container">
-        <div class="surface-card p-4 border-round-xl">
-            <table>
-                <tr>
-                    <th>Baralho</th>
-                    <th>Novos</th>
-                    <th>Aprender</th>
-                    <th>A Revisar</th>
-                </tr>
-                @for (customer of customers; track customer.name) {
-                    <tr>
-                        <td class="font-medium" >
-                            {{customer.name}}
-                        </td> 
-                        <td class="font-medium  text-center" 
-                            [ngStyle]="{'color': (customer.new > 0) ? 'blue' : 'black'}">
-                            {{ customer.new || 0 }}
-                        </td>
-                        <td class="font-medium text-center"
-                            [ngStyle]="{'color': (customer.learn > 0) ? 'red' : 'black'}">
-                            {{customer.learn || 0}}
-                        </td> 
-                        <td class="font-medium text-center"
-                            [ngStyle]="{'color': (customer.review > 0) ? 'green' : 'black'}">
-                            {{customer.review || 0}}
-                        </td> 
-                        <td class="text-center">
-                            <i class="pi pi-cog" style="color: #575757; font-size: 18px;"></i>
-                        </td> 
-                        
-                    </tr>
-                 
-                            @for (teste of customer.children; track teste.name) {
-                                <tr>
-                                    <td class="font-medium">
-                                        {{teste.name}}
-                                    </td> 
-                                    <td class="font-medium text-center"
-                                    [ngStyle]="{'color': (teste.new > 0) ? 'blue' : 'black'}">
-                                        {{teste.new || 0}}
-                                    </td> 
-                                    <td class="font-medium text-center"
-                                        [ngStyle]="{'color': (teste.learn > 0) ? 'red' : 'black'}">
-                                        {{teste.learn || 0}}
-                                    </td> 
-                                    <td class="font-medium text-center"
-                                        [ngStyle]="{'color': (teste.review > 0) ? 'green' : 'black'}">
-                                        {{teste.review || 0}}
-                                    </td> 
-                                    <td class="text-center">
-                                        <i class="pi pi-cog" style="color: #575757; font-size: 18px;"></i>
-                                    </td> 
-                                </tr>
-                            }
-                       
-                }
-            </table>
-        </div>
+<section class="flex mt-5">
+    <div class="card">
+
+    </div>
+
+    <div class="card">
+        
     </div>
 </section>
-
-<p-dialog header="Nome do novo baralho" [(visible)]="visible" [modal]="true"  [style]="{ width: '20vw' }" [draggable]="false" [resizable]="false">
-    <div class="flex justify-content-end gap-2 mt-3">
-        <button pButton pRipple label="Salvar"></button>
-        <button pButton pRipple label="Cancelar"></button>
-    </div>
-</p-dialog>
