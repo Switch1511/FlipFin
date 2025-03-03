@@ -8,11 +8,17 @@
 </header>
 
 <section class="flex">
-    <div class="card" style="width: 55%;">
+    <app-card width="100%" height="800px">
+        <app-table [headerLabels]="headerData" [data]="[
+        ['teste', 'testando'],
+        ['teste', 'testando'],
+        ['teste', 'testando']]" 
+        [hasOptions]="true"  [columnWidth]="'20%'"
+        ></app-table>
+    </app-card >
 
-    </div>
+    <app-card width="100%" height="800px">
 
-    <div class="card" style="width: 45%;">
-        
-    </div>
+
+    </app-card>
 </section>

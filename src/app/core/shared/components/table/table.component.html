@@ -1,0 +1,30 @@
+<div class="table">
+    <div class="tr-header">
+        @for (label of headerLabels; track $index) {
+            <div class="th" [style.width]="columnWidth">{{ label }}</div>
+        }
+
+        @if (hasOptions) {
+            <div class="th" [style.width]="columnWidth"></div>
+        }
+    </div>
+
+    @for (row of data; track $index) {
+        <div class="tr">
+            @for (cell of row; track $index) {
+                <div class="td" [style.width]="columnWidth">{{ cell }}</div>
+            }
+
+            @if (hasOptions) {
+                <div class="td" [style.width]="columnWidth">
+                    <div class="options">
+                        <i class="pi pi-pencil"></i> 
+                    </div>
+                    <div class="options">
+                        <i class="pi pi-trash"></i> 
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

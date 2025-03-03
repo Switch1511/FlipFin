@@ -9,81 +9,17 @@
 </header>
 
 <section class="flex">
-    <div class="card" style="width: 65%; overflow-y: scroll;">
-        <div class="table">
-            <div class="tr-header">
-                <div class="th" style="width: 20%;">Baralhos</div>
-                <div class="th" style="width: 20%;">Novos</div>
-                <div class="th" style="width: 20%;">Aprender</div>
-                <div class="th" style="width: 20%;">Revisar</div>
-                <div class="th" style="width: 20%;"></div>
-            </div>
+    <app-card width="60%" height="525px">
+        <app-table [headerLabels]="headerData" [data]="[
+            ['Biologia', '23', '12', '23'],
+            ['Matemática', '20', '15', '25'],
+            ['Física', '18', '14', '22']]" 
+            [hasOptions]="true"  [columnWidth]="'20%'"
+        ></app-table>
+       
+    </app-card>
 
-            <div class="tr">
-                <div class="td" style="width: 20%;">Biologia</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">12</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">
-                    <i class="pi pi-ellipsis-h"></i> 
-                </div>
-            </div>
-
-            <div class="tr">
-                <div class="td" style="width: 20%;">Biologia</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">12</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">
-                    <i class="pi pi-ellipsis-h"></i> 
-                </div>
-            </div>
-
-            <div class="tr">
-                <div class="td" style="width: 20%;">Biologia</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">12</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">
-                    <i class="pi pi-ellipsis-h"></i> 
-                </div>
-            </div>
-
-            <div class="tr">
-                <div class="td" style="width: 20%;">Biologia</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">12</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">
-                    <i class="pi pi-ellipsis-h"></i> 
-                </div>
-            </div>
-
-            <div class="tr">
-                <div class="td" style="width: 20%;">Biologia</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">12</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">
-                    <i class="pi pi-ellipsis-h"></i> 
-                </div>
-            </div>
-
-            <div class="tr">
-                <div class="td" style="width: 20%;">Biologia</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">12</div>
-                <div class="td" style="width: 20%;">23</div>
-                <div class="td" style="width: 20%;">
-                    <i class="pi pi-ellipsis-h"></i> 
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="card" style="width: 35%;">
-        
-    </div>
+    <app-card width="40%" height="525px"></app-card>
 </section>
 
 <section class="flex mt-5">
