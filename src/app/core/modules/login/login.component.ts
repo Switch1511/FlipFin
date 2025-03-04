@@ -1,16 +1,17 @@
-import { AuthService } from '../../auth/auth.service';
 import { Component, inject, OnInit } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+
+import { AuthService } from '../../auth/auth.service';
+import { ButtonComponent } from '../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-login',
   imports: [
     CheckboxModule,
-    ButtonModule,
+    ButtonComponent,
     InputTextModule,
     ReactiveFormsModule
   ],
