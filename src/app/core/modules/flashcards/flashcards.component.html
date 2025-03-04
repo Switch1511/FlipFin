@@ -9,7 +9,7 @@
 </header>
 
 <section class="flex">
-    <app-card width="60%" height="525px">
+    <app-card width="100%" height="525px">
         <app-table [headerLabels]="headerData" [data]="[
             ['Biologia', '23', '12', '23'],
             ['Matemática', '20', '15', '25'],
@@ -19,8 +19,36 @@
        
     </app-card>
 
-    <app-card width="40%" height="525px" display="flex" justifyContent="center">
-        <canvas id="canvas">{{chart}}</canvas>
+    <app-card width="435px" height="525px">
+        <div class="chart-container">
+            <canvas id="canvas">{{chart}}</canvas>
+        </div>
+        <div class="mt-5" style="display: flex; flex-direction: column; row-gap: 15px;">
+            <div class="flex justify-content-between">
+                <div class="flex align-items-center gap-2">
+                    <div style="width: 25px; height: 25px; background-color: rgba(54, 162, 235);"></div>
+                    <span>Novos</span>
+                </div>
+                
+                <span>23</span>
+            </div>
+            <div class="flex justify-content-between">
+                <div class="flex align-items-center gap-2">
+                    <div style="width: 25px; height: 25px; background-color: rgba(255, 99, 132);"></div>
+                    <span>Aprender</span>
+                </div>
+                
+                <span>23</span>
+            </div>
+            <div class="flex justify-content-between">
+                <div class="flex align-items-center gap-2">
+                    <div style="width: 25px; height: 25px; background-color: rgba(75, 192, 192);"></div>
+                    <span>Revisar</span>
+                </div>
+                
+                <span>23</span>
+            </div>
+        </div>
     </app-card>
 </section>
 

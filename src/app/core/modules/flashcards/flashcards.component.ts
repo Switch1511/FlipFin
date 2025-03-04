@@ -47,7 +47,7 @@ export class FlashcardsComponent {
       options: {
           plugins: {
             legend: {
-              display: true,
+              display: false,
               align: 'start',
               position: 'bottom',
               labels: {
