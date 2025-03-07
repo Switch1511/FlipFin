@@ -5,15 +5,15 @@ import { TableComponent } from '../../shared/components/table/table.component';
 import { CardComponent } from '../../shared/components/card/card.component';
 
 @Component({
-  selector: 'app-anotations',
+  selector: 'app-annotations',
   imports: [
     ButtonComponent,
     TableComponent,
     CardComponent
   ],
-  templateUrl: './anotations.component.html',
-  styleUrl: './anotations.component.scss'
+  templateUrl: './annotations.component.html',
+  styleUrl: './annotations.component.scss'
 })
-export class AnotationsComponent {
+export class AnnotationsComponent {
   headerData = [ "Título", "Anotação" ]
 }
