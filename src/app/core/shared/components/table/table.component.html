@@ -9,10 +9,10 @@
         }
     </div>
 
-    @for (row of data; track $index) {
+    @for (item of data; track $index) {
         <div class="tr">
-            @for (cell of row; track $index) {
-                <div class="td" [style.width]="columnWidth">{{ cell }}</div>
+            @for (column of columns; track $index) {
+                <div class="td" [style.width]="columnWidth">{{ item[column.field] }}</div>
             }
 
             @if (hasOptions) {

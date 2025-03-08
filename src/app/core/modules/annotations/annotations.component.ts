@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { TableComponent } from '../../shared/components/table/table.component';
 import { CardComponent } from '../../shared/components/card/card.component';
+import { AnnotationService } from '../../shared/services/annotation.service';
 
 @Component({
   selector: 'app-annotations',
@@ -16,4 +17,19 @@ import { CardComponent } from '../../shared/components/card/card.component';
 })
 export class AnnotationsComponent {
   headerData = [ "Título", "Anotação" ]
+
+  data: any[] = [];
+
+  constructor(private annotationService: AnnotationService) {}
+
+  ngOnInit(): void {
+    this.getAnnotations();
+  }
+
+  getAnnotations(){
+    this.annotationService.getAnnotations().subscribe({
+      next: (value) => this.data = value,
+      error: (error) => console.error(error)
+    })
+  }
 }
