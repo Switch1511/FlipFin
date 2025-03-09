@@ -6,6 +6,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
 import { TableComponent } from '../../shared/components/table/table.component';
 import { CardComponent } from '../../shared/components/card/card.component';
 import Chart from 'chart.js/auto';
+import { FlashcardService } from '../../shared/services/flashcard.service';
 
 @Component({
   selector: 'app-flashcards',
@@ -21,11 +22,22 @@ import Chart from 'chart.js/auto';
 })
 export class FlashcardsComponent {
   headerData = [ "Baralhos", "Novos", "Aprender", "Revisar" ]
-
+  columns: any[] = [
+    { header: "Baralhos", field: 'deck'},
+    { header: "Novos", field: 'newCard'},
+    { header: "Aprender", field: 'learnCard'},
+    { header: "Revisar", field: 'reviewCard'},
+  ]
   title = 'ng-chart';
   chart: any = [];
+  data: any[] = []
+
+  constructor(
+    private flashcardService: FlashcardService
+  ){ }
 
   ngOnInit() {
+    this.getFlashcards();
     this.chart = new Chart('canvas', {
       type: 'pie',
       data: {
@@ -63,5 +75,12 @@ export class FlashcardsComponent {
       
       
     });
+  }
+
+  getFlashcards(){
+    this.flashcardService.getFlashcards().subscribe({
+      next: (value) => this.data = value,
+      error: (error) => console.error(error)
+    })
   }
 }
