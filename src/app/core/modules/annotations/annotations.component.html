@@ -9,8 +9,12 @@
 
 <section class="flex">
     <app-card width="100%" height="800px">
-        <app-table [headerLabels]="headerData" [data]="data" 
-        [hasOptions]="true"  [columnWidth]="'33.33%'"
+        <app-table 
+            [headerLabels]="headerData" 
+            [data]="data" 
+            [columns]="columns" 
+            [hasOptions]="true" 
+            [columnWidth]="'33.33%'"
         ></app-table>
     </app-card >
 

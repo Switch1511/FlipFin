@@ -18,6 +18,10 @@ import { AnnotationService } from '../../shared/services/annotation.service';
 export class AnnotationsComponent {
   headerData = [ "Título", "Anotação" ]
 
+  columns: any[] = [
+    { header: "title", field: 'title'},
+    { header: "description", field: 'description'},
+  ]
   data: any[] = [];
 
   constructor(private annotationService: AnnotationService) {}
