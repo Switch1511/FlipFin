@@ -79,7 +79,9 @@ export class FlashcardsComponent {
 
   getFlashcards(){
     this.flashcardService.getFlashcards().subscribe({
-      next: (value) => this.data = value,
+      next: (value) => {
+        this.data = value;
+      },
       error: (error) => console.error(error)
     })
   }
