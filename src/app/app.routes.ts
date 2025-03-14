@@ -6,6 +6,9 @@ import { AnnotationsComponent } from './core/modules/annotations/annotations.com
 import { FlashcardsComponent } from './core/modules/flashcards/flashcards.component';
 import { ToDoListComponent } from './core/modules/to-do-list/to-do-list.component';
 import { CoreComponent } from './core/core.component';
+import { PlansComponent } from './core/modules/plans/plans.component';
+import { DisciplinesComponent } from './core/modules/disciplines/disciplines.component';
+import { PlanningComponent } from './core/modules/planning/planning.component';
 
 export const routes: Routes = [
   {
@@ -39,10 +42,31 @@ export const routes: Routes = [
         },
       },
       {
-        path: 'anotations',
+        path: 'annotations',
         component: AnnotationsComponent,
         data: {
           breadcrumb: 'Anotações'
+        },
+      },
+      {
+        path: 'plans',
+        component: PlansComponent,
+        data: {
+          breadcrumb: 'Planos'
+        },
+      },
+      {
+        path: 'disciplines',
+        component: DisciplinesComponent,
+        data: {
+          breadcrumb: 'Diciplinas'
+        },
+      },
+      {
+        path: 'planning',
+        component: PlanningComponent,
+        data: {
+          breadcrumb: 'Planejamento'
         },
       }
 
