@@ -7,20 +7,14 @@
 
     <div class="sidebar-body">
         <ul class="list-none m-0 flex select-none flex-column">
-
             @for (item of menuItems; track item.label) {
               <li [routerLink]="item.link">
-              
-    
-                  @if(item?.icon) { 
-                    <i class="pi" [ngClass]="item.icon + ' mr-2'"></i> 
-                  }
-    
-                  <span>{{ item.label }}</span>
-             
+                @if(item?.icon) { 
+                  <i class="pi" [ngClass]="item.icon + ' mr-2'"></i> 
+                }
+                <span>{{ item.label }}</span>
               </li>
             }
-    
           </ul>
     </div>
 </section>
