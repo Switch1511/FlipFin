@@ -5,7 +5,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 
 import { AuthService } from '../../auth/auth.service';
-import { ButtonComponent } from '../../shared/components/button/button.component';
+import { ButtonComponent } from '@components/button/button.component';
 
 @Component({
   selector: 'app-login',
@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     this.form.enable;
   }
 

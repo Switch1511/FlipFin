@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from '../../shared/components/button/button.component';
-import { TableComponent } from '../../shared/components/table/table.component';
-import { CardComponent } from '../../shared/components/card/card.component';
+import { ButtonComponent } from '@components/button/button.component';
+import { TableComponent } from '@components/table/table.component';
+import { CardComponent } from '@components/card/card.component';
 import Chart from 'chart.js/auto';
 import { FlashcardService } from '../../shared/services/flashcard.service';
 
 @Component({
   selector: 'app-flashcards',
   imports: [
-    ButtonModule, 
+    ButtonModule,
     CommonModule,
     ButtonComponent,
     TableComponent,
@@ -20,7 +20,7 @@ import { FlashcardService } from '../../shared/services/flashcard.service';
   templateUrl: './flashcards.component.html',
   styleUrl: './flashcards.component.scss'
 })
-export class FlashcardsComponent {
+export class FlashcardsComponent implements OnInit {
   headerData = [ "Baralhos", "Novos", "Aprender", "Revisar" ]
   columns: any[] = [
     { header: "Baralhos", field: 'deck'},
@@ -54,7 +54,7 @@ export class FlashcardsComponent {
             borderWidth: 1,
           },
         ],
-    
+
       },
       options: {
           plugins: {
@@ -65,15 +65,15 @@ export class FlashcardsComponent {
               labels: {
                 boxWidth: 30,
                 boxHeight: 30,
-                
+
               },
-              
+
             }
           },
           responsive: true,
       },
-      
-      
+
+
     });
   }
 

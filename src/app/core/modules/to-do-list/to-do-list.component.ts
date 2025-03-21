@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
-import { PanelModule } from 'primeng/panel';
-import { TextareaModule } from 'primeng/textarea';
-import { ButtonComponent } from '../../shared/components/button/button.component';
-import { CardComponent } from '../../shared/components/card/card.component';
+import { ButtonComponent } from '@components/button/button.component';
+import { CardComponent } from '@components/card/card.component';
 
 @Component({
   selector: 'app-to-do-list',
@@ -15,7 +12,7 @@ import { CardComponent } from '../../shared/components/card/card.component';
   styleUrl: './to-do-list.component.scss'
 })
 export class ToDoListComponent {
-  visible: boolean = false;
+  visible = false;
 
   showDialog() {
     this.visible = true;

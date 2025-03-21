@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { ButtonComponent } from '../../shared/components/button/button.component';
-import { TableComponent } from '../../shared/components/table/table.component';
-import { CardComponent } from '../../shared/components/card/card.component';
+import { ButtonComponent } from '@components/button/button.component';
+import { TableComponent } from '@components/table/table.component';
+import { CardComponent } from '@components/card/card.component';
 import { AnnotationService } from '../../shared/services/annotation.service';
 
 @Component({
@@ -15,7 +15,7 @@ import { AnnotationService } from '../../shared/services/annotation.service';
   templateUrl: './annotations.component.html',
   styleUrl: './annotations.component.scss'
 })
-export class AnnotationsComponent {
+export class AnnotationsComponent implements OnInit {
   headerData = [ "Título", "Anotação" ]
 
   columns: any[] = [
