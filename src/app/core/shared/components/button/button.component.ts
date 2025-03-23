@@ -10,6 +10,6 @@ import { NgClass } from '@angular/common';
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
-  @Input() label: string = "teste";
-  @Input() class: string = "";
+  @Input() label = "teste";
+  @Input() class = "";
 }
