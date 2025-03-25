@@ -15,6 +15,11 @@ export class TableComponent {
   @Input() headerLabels: string[] = [];
   @Input() columns: TableColumn[] = [];
   @Input() data: any[] = [];
-  @Input() hasOptions: boolean = false;
-  @Input() columnWidth: string = '20%';
+  @Input() hasOptions = false;
+  @Input() columnWidth = '20%';
+  @Input() actions : { icon: string, action: (item: any) => void }[] = [];
+
+  handleAction(action: (item: any) => void, item: any) {
+    action(item);
+  }
 }

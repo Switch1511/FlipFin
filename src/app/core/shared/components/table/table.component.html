@@ -17,12 +17,11 @@
 
             @if (hasOptions) {
                 <div class="td" [style.width]="columnWidth">
-                    <div class="options">
-                        <i class="pi pi-pencil"></i> 
-                    </div>
-                    <div class="options">
-                        <i class="pi pi-trash"></i> 
-                    </div>
+                  @for (action of actions; track action) {
+                      <div class="options" (click)="handleAction(action.action, item)">
+                          <i [class]="action.icon"></i>
+                      </div>
+                  }
                 </div>
             }
         </div>
