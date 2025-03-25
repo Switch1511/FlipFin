@@ -4,16 +4,20 @@
     <div class="header-options">
         <app-button label="Painel" class="reverse"></app-button>
         <app-button label="Criar baralho"></app-button>
-        <app-button label="Adicionar cartão"></app-button>
+        <app-button label="Editar"></app-button>
     </div>
 </header>
 
 <section class="flex">
     <app-card width="100%" height="525px">
-        <app-table [headerLabels]="headerData" [data]="data" 
-            [hasOptions]="true" [columns]="columns"  [columnWidth]="'20%'"
+        <app-table
+          [headerLabels]="headerData"
+          [data]="data"
+          [actions]="actions"
+          [hasOptions]="true"
+          [columns]="columns"
+          [columnWidth]="'20%'"
         ></app-table>
-       
     </app-card>
 
     <app-card width="535px" height="525px">
@@ -26,7 +30,7 @@
                     <div style="width: 25px; height: 25px; background-color: rgba(54, 162, 235);"></div>
                     <span>Novos</span>
                 </div>
-                
+
                 <span>23</span>
             </div>
             <div class="flex justify-content-between">
@@ -34,7 +38,7 @@
                     <div style="width: 25px; height: 25px; background-color: rgba(255, 99, 132);"></div>
                     <span>Aprender</span>
                 </div>
-                
+
                 <span>23</span>
             </div>
             <div class="flex justify-content-between">
@@ -42,7 +46,7 @@
                     <div style="width: 25px; height: 25px; background-color: rgba(75, 192, 192);"></div>
                     <span>Revisar</span>
                 </div>
-                
+
                 <span>23</span>
             </div>
         </div>
@@ -55,6 +59,6 @@
     </div>
 
     <div class="card">
-        
+
     </div>
 </section>

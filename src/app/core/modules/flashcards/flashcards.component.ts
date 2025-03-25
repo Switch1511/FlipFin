@@ -28,6 +28,9 @@ export class FlashcardsComponent implements OnInit {
     { header: "Aprender", field: 'learnCard'},
     { header: "Revisar", field: 'reviewCard'},
   ]
+  actions = [
+    {icon: 'pi pi-caret-right', action: (item: any) => this.play(item)}
+  ]
   title = 'ng-chart';
   chart: any = [];
   data: any[] = []
@@ -75,6 +78,10 @@ export class FlashcardsComponent implements OnInit {
 
 
     });
+  }
+
+  play(id: any): void {
+    console.log(id);
   }
 
   getFlashcards(){
